@@ -1,0 +1,482 @@
+/* ベーシックなリセット */
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* 全体に「貂明朝」を適用 */
+  body {
+    font-family: "ten-mincho", serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.6;
+    scroll-behavior: smooth; /* スムーズスクロールを適用 */
+    background: linear-gradient(135deg, #f0f4ff, #ffffff);
+  }
+  
+  #hero-header {
+    background-size: cover;
+    background-position: center;
+    height: 100; /* 全画面表示 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+  
+  .upheader {
+    background-image: url("./image/白い梅.jpeg");
+    background-position: center;
+    background-size: cover; /* 画像を全体にフィット */
+    height: 500px; /* 高さを指定 */
+    width:100%;
+    display: flex; /* フレックスボックスを使用 */
+    justify-content: center; /* 中央寄せ */
+    align-items: center; /* 中央寄せ */
+    color: #ddd;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 文字に影を付ける */
+    font-size:65px; /*文字の大きさ調整*/
+    padding:0 !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border:2px solid #747474;
+    /*-ms-filter: sepia(60%);
+    filter: sepia(60%);*/
+    -ms-filter: saturate(200%);
+    filter: saturate(200%);
+    -ms-filter: contrast(120%);
+    filter: contrast(120%);
+    /*-ms-filter: brightness(110%);
+    filter: brightness(110%);*/
+  }
+  
+  .jikosyoukai{
+    align-items: center;        /* 垂直方向の中央揃え */
+    
+  }
+  
+  /* メディアクエリ: 768px以下の画面サイズ（タブレット） */
+  @media (max-width: 768px) {
+    #hero-header {
+      font-size: 2em;
+    }
+  
+    .upheader {
+      height: 300px;
+      font-size: 40px;
+    }
+  
+    .image-container {
+      width: 45%; /* 画像の幅を調整 */
+    }
+  
+    .hover-apng, .hover-apng2 {
+      width: 100px; /* 表示サイズを調整 */
+    }
+  
+    .works-flex {
+      flex-direction: column; /* 縦並びに変更 */
+      align-items: center; /* 中央揃え */
+    }
+  
+    .works-programming, .works-text, .works-portfolio, .works-loadrunner, .works-dot {
+      width: 100%; /* 幅を100%に設定 */
+      margin-bottom: 30px; /* 下に余白を追加 */
+    }
+  }
+  
+  /* メディアクエリ: 480px以下の画面サイズ（スマホ） */
+  @media (max-width: 480px) {
+    #hero-header {
+      font-size: 1.5em;
+    }
+  
+    .upheader {
+      height: 200px;
+      font-size: 30px;
+    }
+  
+    .image-container {
+      width: 100%; /* 画像の幅を調整 */
+    }
+  
+    .hover-apng, .hover-apng2 {
+      width: 80px; /* 表示サイズを調整 */
+    }
+  
+    .works img {
+      max-width: 100%; /* 画像の最大幅を100%に設定 */
+      height: auto; /* 高さを自動調整 */
+    }
+  
+    .works-flex {
+      flex-direction: column; /* 縦並びに変更 */
+      align-items: center; /* 中央揃え */
+    }
+  
+    .works-programming, .works-text, .works-portfolio, .works-loadrunner, .works-dot {
+      width: 100%; /* 幅を100%に設定 */
+      margin-bottom: 20px; /* 下に余白を追加 */
+    }
+  }
+  
+  /* タイムライン全体のスタイル */
+  .career-container {
+    position: relative;
+    padding-left: 80px; /* 左にスペースを確保 */
+    margin-top: 10px;
+  }
+  
+  /* 縦線のスタイル */
+  .timeline-line {
+    position: absolute;
+    left: 15px; /* 縦線の位置を調整 */
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: rgb(75, 41, 1);
+    z-index: 0;
+  }
+  
+  /* タイムライン項目 */
+  .timeline-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+    gap: 20px; /* 丸と内容の間に余白 */
+  }
+  
+  /* 丸のスタイル */
+  .circle {
+    width: 15px;
+    height: 15px;
+    background-color: rgba(74, 4, 11);
+    border-radius: 50%;
+    margin-left: -70px; /* 左にずらす */
+    z-index: 1;
+  }
+  
+  /* タイムラインの内容 */
+  .content {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* 日付と経歴の間に余白 */
+  }
+  
+  /* 日付 */
+  .year {
+    font-weight: bold;
+    color: #444;
+    flex-shrink: 0; /* 固定幅で左寄せ */
+    min-width: 80px; /* 日付部分の最小幅 */
+  }
+  
+  /* 経歴 */
+  .event {
+    color: #666;
+    line-height: 1.5; /* 読みやすくする */
+  }
+  
+  .careerfunction{
+    display:flex;
+    gap:20px;
+  }
+  
+  .rectangle {
+    width: 25px;
+    height: 75px;
+    background: rgb(21, 255, 0);
+  }
+  
+  /* ヘッダーのスタイル */
+  header {
+  
+    top: 0;
+    width: 100%;
+    color: #fdfdfd;
+    text-align: center;
+    z-index: 1000;
+    /*background-image: url("梅の花.jpg");
+    background-size: cover; /* 画像を全体にフィット */
+    /*background-position: center; /* 中央に配置 */
+  }
+  
+  /* ヘッダーのナビゲーションを上部に固定 */
+  header nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color:#333;
+    z-index: 4;
+  }
+  
+  .about-item {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .about-item img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* 丸い形に */
+    margin-right: 20px;
+  }
+  
+  .skill-text {
+    max-width: 600px;
+  }
+  
+  .skill-text h3 {
+    margin: 0;
+    font-size: 1.4em;
+  }
+  
+  .skill-text p {
+    margin: 5px 0;
+    line-height: 1.6;
+  }
+  
+  /* ヘッダー内のナビゲーションリンク */
+  header nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.3s ease; /* 拡大アニメーションの設定 */
+    display: inline-block; /* transformを適用するために追加 */
+    padding: 10px;
+  }
+  
+  
+  /* 各セクション */
+  section {
+    padding: 60px 20px; /* 固定ヘッダー分を確保 */
+    margin-top: 60px;
+  }
+  
+  section:first-letter {
+    font-size: 150%;
+    color: #eb6100;
+  }
+  
+  /* 見出しスタイル */
+  h2 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* プロジェクト項目のスタイル */
+  .project-item {
+    background: #f4f4f4;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  
+  
+  
+  
+  
+  .game_screen {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .image-container {
+    width: 33.5%; /* 画像の幅を調整 */
+    margin-bottom: 0px;
+    text-align: center;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: auto;
+    max-width: 200px; /* 最大幅を設定 */
+    max-height: 200px; /* 最大高さを設定 */
+    object-fit: cover; /* アスペクト比を保ちながら中央を表示 */
+  }
+  
+  details {
+    max-width: 100%;
+  }
+  
+  .hover-container {
+    position: relative;
+    display: inline-block;
+    width: 100%; /* 親要素の幅に合わせる */
+  }
+  
+  /* メイン画像の設定 */
+  .hover-image {
+    width: 200px; /* 必要に応じて調整 */
+    height: auto;
+  }
+  
+  /* APNGの設定 */
+  .hover-apng {
+    position: absolute;
+    top: 0;
+    width: 300px; /* 表示サイズを調整 */
+    height: auto; /* 高さは画像比率に基づく */
+    opacity: 0; /* 初期状態は非表示 */
+    left: 110%; /* メイン画像の右側に表示 */
+    width: 150px; /* 必要に応じて調整 */
+    opacity: 0; /* 初期状態では非表示 */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    border: 3px solid rgba(74, 4, 11);; /* 緑の枠線 */
+      border-radius: 8px; /* 角丸を追加 */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 影を追加 */
+      background-color: #ffffff; /* 背景を白に設定（必要なら） */
+      padding: 10px; /* コンテンツの余白 */
+    pointer-events: none; /* ポインターイベントを無効にする */
+  }
+  
+  .hover-apng2 {
+    position: absolute;
+    top: 0;
+    width: 300px; /* 表示サイズを調整 */
+    height: auto; /* 高さは画像比率に基づく */
+    opacity: 0; /* 初期状態は非表示 */
+    left: -110%; /* メイン画像の右側に表示 */
+    width: 150px; /* 必要に応じて調整 */
+    opacity: 0; /* 初期状態では非表示 */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    border: 3px solid rgba(74, 4, 11);; /* 緑の枠線 */
+      border-radius: 8px; /* 角丸を追加 */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 影を追加 */
+      background-color: #ffffff; /* 背景を白に設定（必要なら） */
+      padding: 10px; /* コンテンツの余白 */
+    pointer-events: none; /* ポインターイベントを無効にする */
+  }
+  
+  /* ホバー時のAPNG表示 */
+  .hover-container:hover > .hover-apng {
+    opacity: 1;
+    transform: translateX(10px); /* 少し横にスライド */
+  }
+  
+  /* ホバー時のAPNG表示 */
+  .hover-container:hover > .hover-apng2 {
+    opacity: 1;
+    transform: translateX(-10px); /* 少し横にスライド */
+  }
+  
+  /* フッターのスタイル */
+  footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    margin-top: 20px;
+  }
+  
+  /* カーソルを合わせたときに拡大 */
+  header nav a:hover {
+    transform: scale(1.3); /* 拡大率 */
+  }
+  
+  .falling-petals-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  
+  .petal {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: fall linear infinite;
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0.5;
+    }
+  }
+  
+  /* Contactセクションのスタイル */
+  #contact {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  #contact h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left; /* 左揃え */
+    
+  }
+  
+  /* Flexboxコンテナ */
+  .contact-container {
+    display: flex;
+    justify-content: center; /* 中央揃え */
+    gap: 40px; /* 要素間のスペース */
+    align-items: center; /* 垂直方向で中央揃え */
+    margin-top: 20px;
+  }
+  
+  /* 個々のアイテム */
+  .contact-item {
+    display: flex;
+    flex-direction: column; /* アイコンとテキストを縦並び */
+    align-items: center; /* テキストをアイコン中央に揃える */
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* アイコンの基本スタイル */
+  .contact-icon {
+    width: 50px; /* アイコンの幅 */
+    height: 50px; /* アイコンの高さ */
+    transition: transform 0.3s ease, filter 0.3s ease; /* アニメーション */
+  }
+  
+  /* ホバー時のアニメーション */
+  .contact-icon:hover {
+    transform: scale(1.2); /* 1.2倍に拡大 */
+    filter: brightness(1.2); /* 明るさを少し上げる */
+    cursor: pointer; /* カーソルを指アイコンに変更 */
+  }
+  
+  /* トップへ戻るボタンのコンテナ */
+  .back-to-top-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* フッターとの間隔を調整 */
+  }
+  
+  /* トップへ戻るボタンのスタイル */
+  #back-to-top {
+    background-color: #163717; /* ボタンの背景色 */
+    color: white; /* 文字色 */
+    padding: 10px 15px; /* ボタンの余白 */
+    border-radius: 50px; /* 丸みを追加 */
+    text-decoration: none; /* 下線を削除 */
+    font-size: 14px; /* フォントサイズ */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 影を追加 */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* アニメーション */
+  }
+  
+  #back-to-top:hover {
+    background-color: #28612b; /* ホバー時の背景色変更 */
+    transform: translateY(-6px); /* 少し浮き上がる */
+  }
+  
+  
