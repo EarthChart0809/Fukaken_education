@@ -164,7 +164,82 @@
             ```<br>
         </p>
     </details>
-    <h3>問題 8: 関数を作ろう</h3>
+
+    <h3>問題 8: 正負を判定しよう</h3>
+    <p>整数が正の数か負の数かを判定して、「正の数です」または「負の数です」と表示するプログラムを作成してください。</p>
+    <details>
+        <summary>ヒント</summary>
+        <p>if 文を使って、数が 0 より大きいかを判定しよう。</p>
+    </details>
+    <details>
+        <summary>解答例</summary>
+        <p>
+            ```python<br>
+            num = int(input("整数を入力してください: "))<br>
+            if num > 0:<br>
+                print("正の数です")<br>
+            elif num < 0:<br>
+                print("負の数です")<br>
+            else:<br>
+                print("0です")<br>
+            ```<br>
+        </p>
+    </details>
+
+    <h3>問題 9: 偶数か奇数かを判定しよう</h3>
+    <p>数字を1つ入力して、それが偶数なら「偶数です」、奇数なら「奇数です」と表示するプログラムを作ってください。</p>
+    <details>
+        <summary>ヒント</summary>
+        <p>「数 % 2 == 0」なら偶数、「そうでなければ奇数」と判定できます。</p>
+    </details>
+    <details>
+        <summary>解答例</summary>
+        <p>
+            ```python<br>
+            num = int(input("整数を入力してください: "))<br>
+            if num % 2 == 0:<br>
+                print("偶数です")<br>
+            else:<br>
+                print("奇数です")<br>
+            ```<br>
+        </p>
+    </details>
+
+    <h3>問題 10: 1からnまでの数字を表示しよう</h3>
+    <p>ユーザーから整数nを入力してもらい、1からnまでの数字を1行ずつ表示するプログラムを作成してください。</p>
+    <details>
+        <summary>ヒント</summary>
+        <p>range()関数を使って1からnまでの数を生成し、forループで1つずつ表示しよう。</p>
+    </details>
+    <details>
+        <summary>解答例</summary>
+        <p>
+        ```python<br>
+        n = int(input("整数を入力してください: "))<br>
+        for i in range(1, n + 1):<br>
+            print(i)<br>
+        ```<br>
+        </p>
+    </details>
+    <h3>問題 11: パスワード認証</h3>
+    <p>ユーザーにパスワードを入力させ、もし「abc123」だったら「ログイン成功」、それ以外は「パスワードが違います」と表示するプログラムを作成してください。</p>
+    <details>
+        <summary>ヒント</summary>
+        <p>if password == "abc123": を使ってみよう。</p>
+    </details>
+    <details>
+        <summary>解答例</summary>
+        <p>
+            ```python<br>
+            password = input("パスワードを入力してください: ")<br>
+            if password == "abc123":<br>
+                print("ログイン成功")<br>
+            else:<br>
+                print("パスワードが違います")<br>
+            ```<br>
+        </p>
+    </details>
+    <h3>問題 12: 関数を作ろう</h3>
     <p>2つの数を受け取り、その合計を返す関数<code>add_numbers</code>を作成してください。</p>
     <details>
         <summary>ヒント</summary>
@@ -182,8 +257,52 @@
             ```<br>
         </p>
     </details>
+    <h3>問題 13: 簡単な関数を作ろう</h3>
+<p>2つの数を受け取り、それらを掛け算した結果を返す関数<code>multiply_numbers</code>を作成してください。</p>
+<details>
+    <summary>ヒント</summary>
+    <p>defを使って関数を定義し、returnで結果を返そう。</p>
+</details>
+<details>
+    <summary>解答例</summary>
+    <p>
+        ```python<br>
+        def multiply_numbers(a, b):<br>
+            return a * b<br>
+<br>
+        # 使用例<br>
+        result = multiply_numbers(3, 4)<br>
+        print(f"掛け算の結果は {result} です")<br>
+        ```<br>
+    </p>
+</details>
 
-    <h3>問題 9: クラスを作ろう</h3>
+<h3>問題 14: クラスで動物を表現しよう</h3>
+<p>動物（Animal）クラスを作成し、名前（name）と鳴き声（sound）を属性として持たせてください。そして、鳴き声を表示するメソッド<code>make_sound</code>を作成しましょう。</p>
+<details>
+    <summary>ヒント</summary>
+    <p>class文と、__init__メソッドを使おう。</p>
+</details>
+<details>
+    <summary>解答例</summary>
+    <p>
+        ```python<br>
+        class Animal:<br>
+            def __init__(self, name, sound):<br>
+                self.name = name<br>
+                self.sound = sound<br>
+<br>
+            def make_sound(self):<br>
+                print(f"{self.name}は「{self.sound}」と鳴きます")<br>
+<br>
+        # 使用例<br>
+        dog = Animal("犬", "ワンワン")<br>
+        dog.make_sound()  # 出力: 犬は「ワンワン」と鳴きます<br>
+        ```<br>
+    </p>
+</details>
+
+    <h3>問題 15: クラスを作ろう</h3>
     <p>人（Person）クラスを作成し、名前(name)を属性に持たせてください。そして名前を表示するメソッド<code>say_hello</code>を作成しましょう。</p>
     <details>
         <summary>ヒント</summary>
@@ -207,7 +326,7 @@
         </p>
     </details>
 
-    <h3>問題 10: OpenCVで画像を表示する</h3>
+    <h3>問題 16: OpenCVで画像を表示する</h3>
     <p>OpenCVを使って、画像ファイル（たとえば「sample.jpg」）を読み込み、ウィンドウに表示してください。</p>
     <details>
         <summary>ヒント</summary>
@@ -234,7 +353,7 @@
         </p>
     </details>
 
-    <h3>問題 11: NumPyで配列を作成する</h3>
+    <h3>問題 17: NumPyで配列を作成する</h3>
     <p>NumPyを使って、1から5までの整数が入った配列を作成し、出力してください。</p>
     <details>
         <summary>ヒント</summary>
@@ -254,7 +373,30 @@
         ```<br>
         </p>
     </details>
-</section>
+
+    <h3>問題 18: NumPyで配列の合計を計算しよう</h3>
+    <p>NumPyを使って、1から5までの整数が入った配列を作成し、その合計を計算して表示するプログラムを作成してください。</p>
+    <details>
+        <summary>ヒント</summary>
+        <p>np.sum()を使うと配列の合計を簡単に計算できます。</p>
+    </details>
+    <details>
+        <summary>解答例</summary>
+        <p>
+        ```python<br>
+        import numpy as np<br>
+<br>
+        # 配列を作成<br>
+        array = np.array([1, 2, 3, 4, 5])<br>
+<br>
+        # 配列の合計を計算<br>
+        total = np.sum(array)<br>
+<br>
+        # 合計を出力<br>
+        print(f"配列の合計は {total} です")<br>
+        ```<br>
+        </p>
+    </details>
 </section>
 
     <section id="additon">
