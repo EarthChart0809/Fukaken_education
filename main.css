@@ -14,6 +14,37 @@ html{
     scroll-behavior: smooth; /* スムーズスクロールを適用 */
     background: linear-gradient(135deg, #f0f4ff, #ffffff);
   }
+
+  /* フォントを貂明朝に指定（Webフォントとして読み込んでいる前提） */
+  pre, code {
+    font-family: 'ten-mincho', Courier, monospace; /* 等幅フォントで読みやすく */
+    font-size: 1rem; /* フォントサイズを調整 */
+    background-color: #f9f9f9; /* 明るいグレーの背景色 */
+    color: #333; /* 濃い文字色で視認性を向上 */
+    padding: 10px; /* 内側の余白を追加 */
+    border: 1px solid #ddd; /* 薄い枠線を追加 */
+    border-radius: 5px; /* 角を丸くする */
+    display: block; /* ブロック要素として表示 */
+    white-space: pre-wrap; /* 折り返しを有効にする */
+    overflow-x: auto; /* 横スクロールを有効にする */
+  }
+
+  button {
+    margin-top: 10px; /* ボタンの上に余白を追加 */
+    padding: 5px 10px; /* ボタンの内側の余白を調整 */
+    background-color: #f9f9f9; /* ボタンの背景色（青） */
+    color: #333; /* ボタンの文字色（白） */
+    border: none; /* 枠線を削除 */
+    border-radius: 5px; /* 角を丸くする */
+    cursor: pointer; /* カーソルをポインタに変更 */
+    transition: background-color 0.3s ease; /* ホバー時のアニメーション */
+    }
+
+  
+  button:hover {
+    background-color: #007BFF; /* ホバー時の背景色を濃い青に変更 */
+    color: #fff; /* ホバー時の文字色を白に変更 */
+  }
   
   #hero-header {
     background-size: cover;

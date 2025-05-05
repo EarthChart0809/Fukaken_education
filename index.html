@@ -10,7 +10,7 @@
     <link rel="icon" href="./image/kame .png">
     <link rel="apple-touch-icon" href="./image/icon-ume_suibokuga.png">
     <link rel="stylesheet" href="main.css">
-    <script type="text/javascript" src="animation.js"></script>
+    <script type="text/javascript" src="main.js"></script>
     <script>
         (function(d) {
             var config = {
@@ -67,9 +67,9 @@
     <details>
         <summary>解答例</summary>
         <p>
-            ```python<br>
-            print(1 + 1)<br>
-            ```<br>
+            
+            <code id="code1">print(1 + 1)</code>
+            <button onclick="copyToClipboard('code1')">コピー</button>
         </p>
     </details>
 
@@ -82,9 +82,8 @@
     <details>
         <summary>解答例</summary>
         <p>
-            ```python<br>
-            print("プログラミングは楽しい！")<br>
-            ```<br>
+            <code id="code2">print("プログラミングは楽しい！")</code>
+            <button onclick="copyToClipboard('code2')">コピー</button>
         </p>
     </details>
 
@@ -97,9 +96,8 @@
     <details>
         <summary>解答例</summary>
         <p>
-            ```python<br>
-            print("Python!" * 3)<br>
-            ```<br>
+            <code id="code3">print("Python!" * 3)</code>
+            <button onclick="copyToClipboard('code3')">コピー</button>
         </p>
     </details>
 
@@ -112,9 +110,8 @@
     <details>
         <summary>解答例</summary>
         <p>
-            ```python<br>
-            print(len("たろう"))<br>
-            ```<br>
+            <code id="code4">print(len("たろう"))</code>
+            <button onclick="copyToClipboard('code4')">コピー</button>
         </p>
     </details>
 
@@ -127,9 +124,8 @@
     <details>
         <summary>解答例</summary>
         <p>
-            ```python<br>
-            print("Programming"[0:5])<br>
-            ```<br>
+            <code id="code5">print("Programming"[0:5])</code>
+            <button onclick="copyToClipboard('code5')">コピー</button>
         </p>
     </details>
 
@@ -142,10 +138,10 @@
     <details>
         <summary>解答例</summary>
         <p>
-            ```python<br>
-            text = "I like cats."<br>
-            print(text.replace("cats", "dogs"))<br>
-            ```<br>
+            <code id="code6">
+text = "I like cats."
+print(text.replace("cats", "dogs"))</code>
+            <button onclick="copyToClipboard('code6')">コピー</button>
         </p>
     </details>
 
@@ -158,10 +154,11 @@
     <details>
         <summary>解答例</summary>
         <p>
-            ```python<br>
-            name = input("あなたの名前を入力してください: ")<br>
-            print(f"こんにちは、{name}さん！")<br>
-            ```<br>
+            <code id="code7">
+name = input("あなたの名前を入力してください: ")
+print(f"こんにちは、{name}さん！")
+            </code>
+            <button onclick="copyToClipboard('code7')">コピー</button>
         </p>
     </details>
 
@@ -174,15 +171,16 @@
     <details>
         <summary>解答例</summary>
         <p>
-            ```python<br>
-            num = int(input("整数を入力してください: "))<br>
-            if num > 0:<br>
-                print("正の数です")<br>
-            elif num < 0:<br>
-                print("負の数です")<br>
-            else:<br>
-                print("0です")<br>
-            ```<br>
+            <code id="code8">
+num = int(input("整数を入力してください: "))
+if num > 0:
+    print("正の数です")
+elif num < 0:
+    print("負の数です")
+else:
+    print("0です")
+            </code>
+            <button onclick="copyToClipboard('code8')">コピー</button>
         </p>
     </details>
 
@@ -195,13 +193,14 @@
     <details>
         <summary>解答例</summary>
         <p>
-            ```python<br>
-            num = int(input("整数を入力してください: "))<br>
-            if num % 2 == 0:<br>
-                print("偶数です")<br>
-            else:<br>
-                print("奇数です")<br>
-            ```<br>
+            <code id="code9">
+num = int(input("整数を入力してください: "))
+if num % 2 == 0:
+    print("偶数です")
+else:
+    print("奇数です")
+            </code>
+            <button onclick="copyToClipboard('code9')">コピー</button>
         </p>
     </details>
 
@@ -214,13 +213,15 @@
     <details>
         <summary>解答例</summary>
         <p>
-        ```python<br>
-        n = int(input("整数を入力してください: "))<br>
-        for i in range(1, n + 1):<br>
-            print(i)<br>
-        ```<br>
+            <code id="code10">
+n = int(input("整数を入力してください: "))
+for i in range(1, n + 1):
+    print(i)
+            </code>
+            <button onclick="copyToClipboard('code10')">コピー</button>
         </p>
     </details>
+
     <h3>問題 11: パスワード認証</h3>
     <p>ユーザーにパスワードを入力させ、もし「abc123」だったら「ログイン成功」、それ以外は「パスワードが違います」と表示するプログラムを作成してください。</p>
     <details>
@@ -230,16 +231,18 @@
     <details>
         <summary>解答例</summary>
         <p>
-            ```python<br>
-            password = input("パスワードを入力してください: ")<br>
-            if password == "abc123":<br>
-                print("ログイン成功")<br>
-            else:<br>
-                print("パスワードが違います")<br>
-            ```<br>
+            <code id="code11">
+password = input("パスワードを入力してください: ")
+if password == "abc123":
+    print("ログイン成功")
+else:
+    print("パスワードが違います")
+            </code>
+            <button onclick="copyToClipboard('code11')">コピー</button>
         </p>
     </details>
-    <h3>問題 12: 関数を作ろう</h3>
+
+    <h3>問題 12: 関数を使って2つの数を足し算しよう</h3>
     <p>2つの数を受け取り、その合計を返す関数<code>add_numbers</code>を作成してください。</p>
     <details>
         <summary>ヒント</summary>
@@ -248,81 +251,93 @@
     <details>
         <summary>解答例</summary>
         <p>
-            ```python<br>
-            def add_numbers(a, b):<br>
-                return a + b<br>
-<br>
-            # 使用例<br>
-            print(add_numbers(3, 5))  # 出力: 8<br>
-            ```<br>
+            <code id="code12">
+def add_numbers(a, b):
+    return a + b
+    
+# 使用例
+result = add_numbers(5, 7)
+print(f"2つの数の合計は {result} です")
+            </code>
+            <button onclick="copyToClipboard('code12')">コピー</button>
         </p>
     </details>
-    <h3>問題 13: 簡単な関数を作ろう</h3>
-<p>2つの数を受け取り、それらを掛け算した結果を返す関数<code>multiply_numbers</code>を作成してください。</p>
-<details>
-    <summary>ヒント</summary>
-    <p>defを使って関数を定義し、returnで結果を返そう。</p>
-</details>
-<details>
-    <summary>解答例</summary>
-    <p>
-        ```python<br>
-        def multiply_numbers(a, b):<br>
-            return a * b<br>
-<br>
-        # 使用例<br>
-        result = multiply_numbers(3, 4)<br>
-        print(f"掛け算の結果は {result} です")<br>
-        ```<br>
-    </p>
-</details>
 
-<h3>問題 14: クラスで動物を表現しよう</h3>
-<p>動物（Animal）クラスを作成し、名前（name）と鳴き声（sound）を属性として持たせてください。そして、鳴き声を表示するメソッド<code>make_sound</code>を作成しましょう。</p>
-<details>
-    <summary>ヒント</summary>
-    <p>class文と、__init__メソッドを使おう。</p>
-</details>
-<details>
-    <summary>解答例</summary>
-    <p>
-        ```python<br>
-        class Animal:<br>
-            def __init__(self, name, sound):<br>
-                self.name = name<br>
-                self.sound = sound<br>
-<br>
-            def make_sound(self):<br>
-                print(f"{self.name}は「{self.sound}」と鳴きます")<br>
-<br>
-        # 使用例<br>
-        dog = Animal("犬", "ワンワン")<br>
-        dog.make_sound()  # 出力: 犬は「ワンワン」と鳴きます<br>
-        ```<br>
-    </p>
-</details>
-
-    <h3>問題 15: クラスを作ろう</h3>
-    <p>人（Person）クラスを作成し、名前(name)を属性に持たせてください。そして名前を表示するメソッド<code>say_hello</code>を作成しましょう。</p>
+    <h3>問題 13: 関数を使って2つの数を掛け算しよう</h3>
+    <p>2つの数を受け取り、それらを掛け算した結果を返す関数<code>multiply_numbers</code>を作成してください。</p>
     <details>
         <summary>ヒント</summary>
-        <p>class文と、__init__メソッドを使おう。</p>
+        <p>1. <code>def</code>を使って関数を定義します。</p>
+        <p>2. 関数の引数として2つの数を受け取ります。</p>
+        <p>3. <code>return</code>を使って掛け算の結果を返します。</p>
     </details>
     <details>
         <summary>解答例</summary>
         <p>
-        ```python<br>
-        class Person:<br>
-            def __init__(self, name):<br>
-                self.name = name<br>
-<br>
-            def say_hello(self):<br>
-                print(f"こんにちは、{self.name}さん！")<br>
-<br>
-        # 使用例<br>
-        person = Person("たろう")<br>
-        person.say_hello()  # 出力: こんにちは、たろうさん！<br>
-        ```<br>
+            <code id="code13">
+def multiply_numbers(a, b):
+    return a * b
+
+# 使用例
+result = multiply_numbers(3, 4)
+print(f"掛け算の結果は {result} です")
+            </code>
+            <button onclick="copyToClipboard('code13')">コピー</button>
+        </p>
+    </details>
+
+    <h3>問題 14: クラスを作ろう</h3>
+    <p>人（Person）クラスを作成し、名前(name)を属性に持たせてください。そして名前を表示するメソッド<code>say_hello</code>を作成しましょう。</p>
+    <details>
+        <summary>ヒント</summary>
+        <p>1. <code>class</code>を使ってクラスを定義します。</p>
+        <p>2. <code>__init__</code>メソッドを使って、名前を初期化します。</p>
+        <p>3. <code>say_hello</code>メソッドを作成し、<code>print</code>で挨拶文を表示します。</p>
+    </details>
+    <details>
+        <summary>解答例</summary>
+        <p>
+            <code id="code14">
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def say_hello(self):
+        print(f"こんにちは、{self.name}さん！")
+
+# 使用例
+person = Person("たろう")
+person.say_hello()  # 出力: こんにちは、たろうさん！
+            </code>
+            <button onclick="copyToClipboard('code14')">コピー</button>
+        </p>
+    </details>
+
+    <h3>問題 15: クラスで動物を表現しよう</h3>
+    <p>動物（Animal）クラスを作成し、名前（name）と鳴き声（sound）を属性として持たせてください。そして、鳴き声を表示するメソッド<code>make_sound</code>を作成しましょう。</p>
+    <details>
+        <summary>ヒント</summary>
+        <p>1. <code>class</code>を使ってクラスを定義します。</p>
+        <p>2. <code>__init__</code>メソッドを使って、名前と鳴き声を初期化します。</p>
+        <p>3. <code>make_sound</code>メソッドを作成し、<code>print</code>で鳴き声を表示します。</p>
+    </details>
+    <details>
+        <summary>解答例</summary>
+        <p>
+            <code id="code15">
+class Animal:
+    def __init__(self, name, sound):
+        self.name = name
+        self.sound = sound
+
+    def make_sound(self):
+        print(f"{self.name}は「{self.sound}」と鳴きます")
+
+# 使用例
+dog = Animal("犬", "ワンワン")
+dog.make_sound()  # 出力: 犬は「ワンワン」と鳴きます
+            </code>
+            <button onclick="copyToClipboard('code15')">コピー</button>
         </p>
     </details>
 
@@ -335,21 +350,17 @@
     <details>
         <summary>解答例</summary>
         <p>
-        ```python<br>
-        import cv2<br>
-<br>
-        # 画像を読み込む<br>
-        image = cv2.imread("sample.jpg")<br>
-<br>
-        # 画像を表示する<br>
-        cv2.imshow("Sample Image", image)<br>
-<br>
-        # キー入力待ち<br>
-        cv2.waitKey(0)<br>
-<br>
-        # ウィンドウを閉じる<br>
-        cv2.destroyAllWindows()<br>
-        ```<br>
+            <code id="code16">
+import cv2
+
+# 画像を読み込む
+image = cv2.imread("sample.jpg")
+# 画像を表示する\ncv2.imshow("Sample Image", image)
+# キー入力待ち\ncv2.waitKey(0)\n\n# ウィンドウを閉じる
+    
+cv2.destroyAllWindows()
+</code>
+            <button onclick="copyToClipboard('code16')">コピー</button>
         </p>
     </details>
 
@@ -362,15 +373,15 @@
     <details>
         <summary>解答例</summary>
         <p>
-        ```python<br>
-        import numpy as np<br>
-<br>
-        # 配列を作成<br>
-        array = np.array([1, 2, 3, 4, 5])<br>
-<br>
-        # 配列を出力<br>
-        print(array)<br>
-        ```<br>
+            <code id="code17">
+import numpy as np
+
+# 配列を作成
+array = np.array([1, 2, 3, 4, 5])
+# 配列を出力
+print(array)
+</code>
+            <button onclick="copyToClipboard('code17')">コピー</button>
         </p>
     </details>
 
@@ -383,18 +394,17 @@
     <details>
         <summary>解答例</summary>
         <p>
-        ```python<br>
-        import numpy as np<br>
-<br>
-        # 配列を作成<br>
-        array = np.array([1, 2, 3, 4, 5])<br>
-<br>
-        # 配列の合計を計算<br>
-        total = np.sum(array)<br>
-<br>
-        # 合計を出力<br>
-        print(f"配列の合計は {total} です")<br>
-        ```<br>
+            <code id="code18">
+import numpy as np
+
+# 配列を作成
+array = np.array([1, 2, 3, 4, 5])
+# 配列の合計を計算
+total = np.sum(array)
+# 合計を出力
+print(f"配列の合計は {total} です")
+</code>
+            <button onclick="copyToClipboard('code18')">コピー</button>
         </p>
     </details>
 </section>
