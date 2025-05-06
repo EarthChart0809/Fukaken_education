@@ -34,7 +34,7 @@ html{
     padding: 5px 10px; /* ボタンの内側の余白を調整 */
     background-color: #f9f9f9; /* ボタンの背景色（青） */
     color: #333; /* ボタンの文字色（白） */
-    border: none; /* 枠線を削除 */
+    border: 1px solid #ddd; /* 枠線を削除 */
     border-radius: 5px; /* 角を丸くする */
     cursor: pointer; /* カーソルをポインタに変更 */
     transition: background-color 0.3s ease; /* ホバー時のアニメーション */
@@ -154,74 +154,6 @@ html{
     }
   }
   
-  /* タイムライン全体のスタイル */
-  .career-container {
-    position: relative;
-    padding-left: 80px; /* 左にスペースを確保 */
-    margin-top: 10px;
-  }
-  
-  /* 縦線のスタイル */
-  .timeline-line {
-    position: absolute;
-    left: 15px; /* 縦線の位置を調整 */
-    top: 0;
-    width: 4px;
-    height: 100%;
-    background-color: rgb(75, 41, 1);
-    z-index: 0;
-  }
-  
-  /* タイムライン項目 */
-  .timeline-item {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-bottom: 4px;
-    gap: 20px; /* 丸と内容の間に余白 */
-  }
-  
-  /* 丸のスタイル */
-  .circle {
-    width: 15px;
-    height: 15px;
-    background-color: rgba(74, 4, 11);
-    border-radius: 50%;
-    margin-left: -70px; /* 左にずらす */
-    z-index: 1;
-  }
-  
-  /* タイムラインの内容 */
-  .content {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* 日付と経歴の間に余白 */
-  }
-  
-  /* 日付 */
-  .year {
-    font-weight: bold;
-    color: #444;
-    flex-shrink: 0; /* 固定幅で左寄せ */
-    min-width: 80px; /* 日付部分の最小幅 */
-  }
-  
-  /* 経歴 */
-  .event {
-    color: #666;
-    line-height: 1.5; /* 読みやすくする */
-  }
-  
-  .careerfunction{
-    display:flex;
-    gap:20px;
-  }
-  
-  .rectangle {
-    width: 25px;
-    height: 75px;
-    background: rgb(21, 255, 0);
-  }
   
   /* ヘッダーのスタイル */
   header {
