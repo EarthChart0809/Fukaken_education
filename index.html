@@ -58,6 +58,10 @@
     <h2>PYTHON EXERCISES</h2>
     <p>以下の問題はPythonを学ぶ上で欠かせない基礎となっています。</p>
 
+    <section id="beginner">
+    <h3>初級編</h3>
+    <p>Pythonの基本的な文法や構文を学ぶための問題です。</p>
+
     <h3>問題 1: 数の合計を計算する</h3>
     <p>1+1の計算結果を出力するプログラムを作成してください。</p>
     <details>
@@ -409,6 +413,217 @@ print(f"配列の合計は {total} です")
             <button onclick="copyToClipboard('code18')">コピー</button>
         </p>
     </details>
+    </section>
+
+    <!-- 応用編 -->
+    <section id="advanced">
+    <h3>応用編</h3>
+    <p>Pythonの応用的な使い方を学ぶための問題です。<br>
+        ここからはプログラミング班に所属希望の人向けの問題です。<br>
+        VsCodeを使ってPythonのプログラムを作成することを前提としています。<br>
+    </p>
+    
+<h3>問題 1: クラスを別ファイルに分けて使おう</h3>
+<p>初級編 : 問題 15で作った<code>Animal</code>クラスを、別ファイル（<code>animal.py</code>）に保存し、メインファイル（<code>main.py</code>）からインポートして使ってみましょう。</p>
+<details>
+    <summary>ヒント</summary>
+    <p>1. <code>animal.py</code>というファイルを作成し、その中に<code>Animal</code>クラスを定義します。</p>
+    <p>2. <code>main.py</code>では、<code>from animal import Animal</code>を使ってインポートします。</p>
+</details>
+<details>
+    <summary>解答例</summary>
+    <p>
+        <strong>animal.py</strong><br>
+        <code id="code16a">
+class Animal:
+    def __init__(self, name, sound):
+        self.name = name
+        self.sound = sound
+
+    def make_sound(self):
+        print(f"{self.name}は「{self.sound}」と鳴きます")
+        </code>
+        <button onclick="copyToClipboard('code16a')">コピー</button>
+        <br><br>
+        <strong>main.py</strong><br>
+        <code id="code16b">
+from animal import Animal
+
+cat = Animal("猫", "ニャー")
+cat.make_sound()
+        </code>
+        <button onclick="copyToClipboard('code16b')">コピー</button>
+    </p>
+</details>
+
+<h3>問題 2: サーバーとクライアントで通信しよう</h3>
+<p>
+Pythonの<code>socket</code>モジュールを使って、サーバーとクライアントの間で1回だけメッセージを送受信するプログラムを作ってください。  
+まずはサーバーを起動して、次にクライアントから「こんにちはサーバー」と送信し、サーバーがそのメッセージを受け取って表示するようにしてください。<br>
+こちらは2人以上(PC2台以上)で行うことを前提としています。<br>
+サーバーは1台、クライアントは1台で接続できるようにしてください。<br>
+</p>
+
+<details>
+    <summary>ヒント</summary>
+    <ul>
+        <li><code>socket.socket()</code>で通信ソケットを作成できます。</li>
+        <li>サーバーでは <code>bind()</code>, <code>listen()</code>, <code>accept()</code> を使います。</li>
+        <li>クライアントでは <code>connect()</code> を使ってサーバーに接続します。</li>
+        <li>メッセージは <code>send()</code> / <code>recv()</code> を使ってやり取りします。</li>
+    </ul>
+</details>
+
+<details>
+    <summary>解答例</summary>
+    <p><strong>server.py</strong></p>
+    <code id="code18a">
+import socket
+
+# サーバーの準備
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server_socket.bind(("localhost", 50007))
+server_socket.listen(1)
+print("サーバー起動中... 接続待機中")
+
+conn, addr = server_socket.accept()
+print(f"{addr} から接続されました")
+
+data = conn.recv(1024)
+print("受信メッセージ:", data.decode())
+
+conn.close()
+server_socket.close()
+    </code>
+    <button onclick="copyToClipboard('code18a')">コピー</button>
+
+    <p><strong>client.py</strong></p>
+    <code id="code18b">
+import socket
+
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+client_socket.connect(("localhost", 50007))
+
+message = "こんにちはサーバー"
+client_socket.send(message.encode())
+
+client_socket.close()
+    </code>
+    <button onclick="copyToClipboard('code18b')">コピー</button>
+</details>
+
+<h3>問題 3: OpenCVでQRコードを読み取ろう</h3>
+<p>
+QRコードを読み取るプログラムを作成してください。カメラで撮影した画像からQRコードを検出し、その中のテキストを表示するようにします。
+</p>
+<p>
+以下のコードには関数<code>get_qr_text()</code>が定義されています。これを活用して、カメラから1枚画像を取得し、QRコードを読み取る処理を完成させましょう。
+</p>
+
+<details>
+    <summary>ヒント</summary>
+    <ul>
+        <li>OpenCVの <code>cv2.VideoCapture(0)</code> を使ってカメラを起動できます。</li>
+        <li><code>ret, frame = cap.read()</code> で1枚の画像を取得します。</li>
+        <li><code>get_qr_text(frame)</code> を使ってQRコードの内容を取得できます。</li>
+    </ul>
+</details>
+
+<details>
+    <summary>QRコード読み取り関数</summary>
+    <code id="code19a">
+import cv2, numpy
+from pyzbar.pyzbar import decode, ZBarSymbol
+
+"""
+Attributes:
+frame (numpy.ndarray) : カメラ画像などの画像データ
+"""
+def get_qr_text(frame: numpy.ndarray):
+    value = decode(frame, symbols=[ZBarSymbol.QRCODE])
+    return '\n'.join(list(map(lambda code: code.data.decode('utf-8'), value)))
+    </code>
+    <button onclick="copyToClipboard('code19a')">コピー</button>
+</details>
+
+<details>
+    <summary>解答例（カメラから1枚撮影し、QRコードを表示）</summary>
+    <code id="code19b">
+import cv2
+from your_qr_module import get_qr_text  # ↑関数を別ファイルにした場合
+
+cap = cv2.VideoCapture(0)
+ret, frame = cap.read()
+cap.release()
+
+if ret:
+    result = get_qr_text(frame)
+    if result:
+        print("読み取ったQRコードの内容：")
+        print(result)
+    else:
+        print("QRコードが見つかりませんでした。")
+else:
+    print("カメラから画像を取得できませんでした。")
+    </code>
+    <button onclick="copyToClipboard('code19b')">コピー</button>
+</details>
+
+<h3>問題 4: コントローラーの入力を取得してみよう</h3>
+<p>
+ゲームコントローラーを接続し、ボタンが押されたときにその情報をターミナルに表示するプログラムを作成してください。<br>
+このプログラムでは、<code>pygame</code>ライブラリを使用します。
+</p>
+
+<details>
+    <summary>ヒント</summary>
+    <ul>
+        <li><code>pygame.joystick</code>モジュールを使ってコントローラーにアクセスできます。</li>
+        <li><code>pygame.event.get()</code> を使って入力イベントを取得します。</li>
+        <li>繰り返し処理（<code>while</code>）を使ってリアルタイムに反応させましょう。</li>
+    </ul>
+</details>
+
+<details>
+    <summary>解答例</summary>
+    <code id="code20">
+import pygame
+import time
+
+# 初期化
+pygame.init()
+pygame.joystick.init()
+
+# 接続されたコントローラーの数を確認
+if pygame.joystick.get_count() == 0:
+    print("コントローラーが接続されていません")
+    exit()
+
+# 最初のコントローラーを使う
+joystick = pygame.joystick.Joystick(0)
+joystick.init()
+print(f"使用中のコントローラー: {joystick.get_name()}")
+
+print("ボタンを押すと反応します（Ctrl+Cで終了）")
+
+try:
+    while True:
+        pygame.event.pump()  # イベントの更新
+        for i in range(joystick.get_numbuttons()):
+            if joystick.get_button(i):
+                print(f"ボタン {i} が押されました")
+        time.sleep(0.1)
+except KeyboardInterrupt:
+    print("終了しました")
+
+pygame.quit()
+    </code>
+    <button onclick="copyToClipboard('code20')">コピー</button>
+</details>
+
+
+
+</section>
 </section>
 
     <section id="additon">
